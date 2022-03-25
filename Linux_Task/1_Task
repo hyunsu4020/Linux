@@ -64,47 +64,11 @@ dlgustn4020
 
 2. 이 리눅스 컴퓨터의 하드 디스크 총용량은 얼마이며 (단위: GB), 가용 공간은 얼마인가?
 답:
-하드 디스크 총용량: 266.923 GB
-가용 공간: 241.149 GB
-dlgustn4020@cegw:~$ df -h
-Filesystem      Size  Used Avail Use% Mounted on
-udev            7.8G     0  7.8G   0% /dev
-tmpfs           1.6G  1.7M  1.6G   1% /run
-/dev/sdc1        28G   12G   15G  44% /
-tmpfs           7.9G     0  7.9G   0% /dev/shm
-tmpfs           5.0M  4.0K  5.0M   1% /run/lock
-tmpfs           7.9G     0  7.9G   0% /sys/fs/cgroup
-/dev/loop0      640K  640K     0 100% /snap/gnome-logs/106
-/dev/loop2      248M  248M     0 100% /snap/gnome-3-38-2004/87
-/dev/loop4      2.3M  2.3M     0 100% /snap/gnome-system-monitor/157
-/dev/loop5      219M  219M     0 100% /snap/gnome-3-34-1804/72
-/dev/loop3       66M   66M     0 100% /snap/gtk-common-themes/1515
-/dev/loop6      2.7M  2.7M     0 100% /snap/gnome-calculator/920
-/dev/loop9       66M   66M     0 100% /snap/gtk-common-themes/1519
-/dev/loop8      768K  768K     0 100% /snap/gnome-characters/761
-/dev/loop7       56M   56M     0 100% /snap/core18/2284
-/dev/loop10     128K  128K     0 100% /snap/bare/5
-/dev/loop11     141M  141M     0 100% /snap/gnome-3-26-1604/102
-/dev/loop14     2.7M  2.7M     0 100% /snap/gnome-system-monitor/174
-/dev/loop16     640K  640K     0 100% /snap/gnome-logs/103
-/dev/loop17     163M  163M     0 100% /snap/gnome-3-28-1804/145
-/dev/loop18     165M  165M     0 100% /snap/gnome-3-28-1804/161
-/dev/loop19     768K  768K     0 100% /snap/gnome-characters/741
-/dev/loop20     2.5M  2.5M     0 100% /snap/gnome-calculator/884
-/dev/loop22     219M  219M     0 100% /snap/gnome-3-34-1804/77
-/dev/loop21     249M  249M     0 100% /snap/gnome-3-38-2004/99
-/dev/loop24     141M  141M     0 100% /snap/gnome-3-26-1604/104
-/dev/sdc2       207G  416M  196G   1% /home
-tmpfs           1.6G   16K  1.6G   1% /run/user/121
-/dev/loop25      62M   62M     0 100% /snap/core20/1361
-/dev/loop12     111M  111M     0 100% /snap/core/12725
-/dev/loop13      62M   62M     0 100% /snap/core20/1376
-/dev/loop15     111M  111M     0 100% /snap/core/12821
-/dev/loop23      56M   56M     0 100% /snap/core18/2344
-tmpfs           1.6G     0  1.6G   0% /run/user/1003
-tmpfs           1.6G     0  1.6G   0% /run/user/1013
-tmpfs           1.6G     0  1.6G   0% /run/user/1033
-
+하드 디스크 총용량: 235 GB
+가용 공간: 211 GB
+dlgustn4020@cegw:~$ df -h | grep dc
+/dev/sdc1        28G   12G   15G  45% /
+/dev/sdc2       207G  420M  196G   1% /home
 
 3. 이 리눅스 컴퓨터의 메인 메모리 총용량은 얼마이며 (단위: GB), 가용 공간은 얼마인가?
 답: 
