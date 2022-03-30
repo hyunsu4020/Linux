@@ -1,6 +1,10 @@
 <파일과 디렉토리의 생성, 이용, 삭제>
 1. 일반 사용자가 시스템 관리자 권한을 가지려면 어떤 명령을 내려야 하는가?
 답: sudo su
+<결과>
+dlgustn4020@cegw:~$ sudo su
+[sudo] dlgustn4020의 암호:
+
 
 2. guest 계정 사용자의 홈 디렉토리에 있는 모든 파일을 /tmp/guest 디렉토리로 복사하려면 어떤 명령을 내려야 하는가?
 답: cp * /tmp/quest
@@ -20,14 +24,32 @@ $ cp /etc/passwd /etc/group .
 group파일이 etc폴더에 없으면 group파일이 생성됩니다.
 
 5. /home/hjyang/korea 는 디렉토리 이름이며, 이 디렉토리 내에는 busan, seoul, daegu 등 다른 디렉토리가 있다. /home/hjyang/korea 디렉토리 및 그 하위 디렉토리를 한번에 모두 삭제하려면 어떤 명령을 내려야 하는가?
-답:
+답: rm -r korea
+<결과>
+dlgustn4020@cegw:~$ mkdir korea
+dlgustn4020@cegw:~$ ls
+examples.desktop  korea  myetc  symlink3
+dlgustn4020@cegw:~$ cd korea
+dlgustn4020@cegw:~/korea$ mkdir busan seoul daegu
+dlgustn4020@cegw:~/korea$ ls
+busan  daegu  seoul
+dlgustn4020@cegw:~/korea$ cd
+dlgustn4020@cegw:~$ rm -r korea
+dlgustn4020@cegw:~$ ls
+examples.desktop  myetc  symlink3
 
 6. 하드 링크 hard link 란 무엇을 말하는가?
-답:
+답: Unix 링크 작성 방법 중 하나입니다.
+기본적으로 모든 파일에는 파일 이름을 지정하는 단일 하드 링크가 있습니다.
+하드 링크를 작성하면 파일에 대한 추가 디렉토리 엔트리가 생성됩니다.
+하드 링크는 두 가지 제한이 있는데 첫번째는 자신의 파일 시스템 외부에 있는 파일을 참조할 수 없습니다.
+두 번째는 디렉토리를 참조할 수 없습니다.
 
 7. 다음 명령의 의미는 무엇인가?
 $ ln -s /etc/passwd passwd
-답:
+답: /etc/passwd 디렉토리에 대한 passwd라는 심볼릭 링크 파일이 생성됩니다.
 
 8. 심볼릭 링크와 비교하여 하드 링크의 제약점 두 가지를 각각 설명하라.
-답:
+답: 심볼릭 링크와 달리 하드링크가 포함된 디렉토리를 나열할 때 링크의 특별한 표시가 표시되지 않습니다. 
+하드 링크가 삭제되면 해당 링크는 삭제되지만  파일 자체의 내용은 파일에 대한 모든 링크가 삭제될 때까지 계속 존재합니다.(즉, 공간이 할당 해제되지 않습니다.)
+
