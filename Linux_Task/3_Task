@@ -1,8 +1,21 @@
 <명령어 형태, 리디렉션>
 
 1. /etc/passwd 파일 및 /etc/group 파일에 들어있는 내용은 무엇인지 구체적으로 설명하라.
-
+답: 
+/etc/passwd 파일: 사용자들의 계정 목록이 들어있습니다.
+/etc/group 파일: 생성된 그룹 정보가 들어있습니다.
+		     (그룹은 기본적으로 사용자를 생성할 때 함께 생성됩니다.)
+         
 2. sonnim 이라는 일반 사용자 계정을 만들려면 어떻게 해야 하는가? 단, sonnim 은 student 그룹에 속해야 한다.
+답:
+<첫번째 방법> 
+sudo vi /etc/passwd 명령어 입력 -> 계정 암호 입력 
+-> 계정 리스트 마지막 줄에 sonnim:x:1049:2000:Sonnim:/home/sonnim:/bin/bash 입력 후 저장
+-> sudo passwd sonnim 명령어 입력 -> 패스워드 설정 -> sudo mkdir /home/sonnim 명령어 입력
+-> sudo chown sonnim:student sonnim /home/sonnim 명령어 입력
+
+<두번째 방법>
+sudo useradd -g 2000 -m -d /home/sonnim -s /bin/bash sonnim 명령어 입력 -> sudo passwd sonnim 명령어 입력 -> 패스워드 설정	
 
 3. 다음 명령은 어떤 기능을 하는가?
 - whatis, apropos, which
@@ -41,3 +54,4 @@ $ cp /dev/null plan
 13. /usr/bin 에 있는 파일 중 심볼릭 링크에 해당되는 파일을 찾으려면 어떤 명령을 내려야 할까?
 
 14. 윈도우즈 PC의 memo.txt 에 있는 내용을 리눅스 컴퓨터의 memo.txt 에 저장하려면 어떻게 해야 할까?
+
