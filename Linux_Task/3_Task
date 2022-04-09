@@ -1,0 +1,43 @@
+<명령어 형태, 리디렉션>
+
+1. /etc/passwd 파일 및 /etc/group 파일에 들어있는 내용은 무엇인지 구체적으로 설명하라.
+
+2. sonnim 이라는 일반 사용자 계정을 만들려면 어떻게 해야 하는가? 단, sonnim 은 student 그룹에 속해야 한다.
+
+3. 다음 명령은 어떤 기능을 하는가?
+- whatis, apropos, which
+
+4. cat 명령은 파일 시스템의 어느 곳에 있는지, 즉 경로명을 알려면 어떤 명령을 내려야 하는가?
+
+5. 다음 리눅스 명령은 어디에 있을까? 만일 파일 시스템에 있다면 경로명은 무엇인가?
+- ls, cd, pwd, file
+
+6. 리눅스 메뉴얼 section 8 에는 어떤 내용들이 수록되어있는가?
+
+7. /etc/passwd 파일의 형식(format)에 대한 설명을 보려면 어떤 명령을 내려야 하는가?
+
+8. alias 명령을 사용하는 예를 보이라.
+
+9. 다음 명령의 의미는 각각 무엇인가? 단, bash 쉘을 사용하고 있는 것으로 가정한다.
+
+$ unalias h
+$ > kk
+$ cat kk kk2 kk3 > kk4
+$ cat < kk > kk2 2> kk3
+$ echo hjyang >> kk4
+$ last | more
+$ who | wc
+$ cat /etc/passwd | head | tail -n 5
+$ ls -r | sort
+$ ls -R | grep bin
+$ cp /dev/null plan
+
+10. 리눅스 운영체제의 표준입력 standard output, 표준출력 standard output, 표준오류 standard error 란 각각 무엇을 말하는가?
+
+11. 표준입력을 리디렉션 redirection 하는 예제 명령을 보이고 동작을 설명하라.
+
+12. /home 디렉토리에 있는 파일의 개수를 알려면 어떤 명령을 내려야 할까?
+
+13. /usr/bin 에 있는 파일 중 심볼릭 링크에 해당되는 파일을 찾으려면 어떤 명령을 내려야 할까?
+
+14. 윈도우즈 PC의 memo.txt 에 있는 내용을 리눅스 컴퓨터의 memo.txt 에 저장하려면 어떻게 해야 할까?
