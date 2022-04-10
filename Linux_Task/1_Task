@@ -68,7 +68,7 @@ dlgustn4020
 가용 공간: 211 GB
 dlgustn4020@cegw:~$ df -h | grep dc
 /dev/sdc1        28G   12G   15G  45% /
-/dev/sdc2       207G  420M  196G   1% /home
+/dev/sdc2       207G  416M  196G   1% /home
 
 3. 이 리눅스 컴퓨터의 메인 메모리 총용량은 얼마이며 (단위: GB), 가용 공간은 얼마인가?
 답: 
@@ -142,7 +142,7 @@ dlgustn4020@cegw:~$ ls -l
 
 -r: 결과를 알파벳 역순으로 표시합니다. 한글의 경우 ㄱㄴㄷ 순서의 역순으로 출력됩니다.
 
--s: 파일의 합계와 각 파일 앞에 크기를 출력하는 명령어입니다.
+-s: 파일의 합계와 각 파일 앞에 개수를 출력하는 명령어입니다.
 dlgustn4020@cegw:~$ ls -s
 합계 12
 12 examples.desktop
