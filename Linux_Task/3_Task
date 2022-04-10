@@ -5,7 +5,7 @@
 /etc/passwd 파일: 사용자들의 계정 목록이 들어있습니다.
 /etc/group 파일: 생성된 그룹 정보가 들어있습니다.
 		     (그룹은 기본적으로 사용자를 생성할 때 함께 생성됩니다.)
-         
+
 2. sonnim 이라는 일반 사용자 계정을 만들려면 어떻게 해야 하는가? 단, sonnim 은 student 그룹에 속해야 한다.
 답:
 <첫번째 방법> 
@@ -18,40 +18,78 @@ sudo vi /etc/passwd 명령어 입력 -> 계정 암호 입력
 sudo useradd -g 2000 -m -d /home/sonnim -s /bin/bash sonnim 명령어 입력 -> sudo passwd sonnim 명령어 입력 -> 패스워드 설정	
 
 3. 다음 명령은 어떤 기능을 하는가?
-- whatis, apropos, which
+답:
+whatis: 특정 명령어가 어떤 명령어인가를 간단히 확인할 때 사용합니다.
+apropos: 검색어와 관련있는 명령어를 설명과 함께 출력 
+which: 현재 사용하고 있는 명령어 실행 파일(또는 링크)의 위치를 알 수 있습니다.
 
 4. cat 명령은 파일 시스템의 어느 곳에 있는지, 즉 경로명을 알려면 어떤 명령을 내려야 하는가?
+답: 
+dlgustn4020@cegw:~$ which cat
+/bin/cat
 
 5. 다음 리눅스 명령은 어디에 있을까? 만일 파일 시스템에 있다면 경로명은 무엇인가?
-- ls, cd, pwd, file
+답:
+ls: 
+dlgustn4020@cegw:~$ which ls
+/bin/ls
+
+cd:
+dlgustn4020@cegw:~$ which cd
+
+pwd: 
+dlgustn4020@cegw:~$ which pwd
+/bin/pwd
+ 
+file:
+dlgustn4020@cegw:~$ which file
+/usr/bin/file
 
 6. 리눅스 메뉴얼 section 8 에는 어떤 내용들이 수록되어있는가?
+답: 시스템 관리 명령
 
 7. /etc/passwd 파일의 형식(format)에 대한 설명을 보려면 어떤 명령을 내려야 하는가?
+답: man 5 passwd
 
 8. alias 명령을 사용하는 예를 보이라.
+답:
+dlgustn4020@cegw:~$ alias hs='cal 1 2022'
+dlgustn4020@cegw:~$ hs
+      1월 2022
+일 월 화 수 목 금 토
+                   1
+ 2  3  4  5  6  7  8
+ 9 10 11 12 13 14 15
+16 17 18 19 20 21 22
+23 24 25 26 27 28 29
+30 31
 
 9. 다음 명령의 의미는 각각 무엇인가? 단, bash 쉘을 사용하고 있는 것으로 가정한다.
 
-$ unalias h
-$ > kk
-$ cat kk kk2 kk3 > kk4
-$ cat < kk > kk2 2> kk3
-$ echo hjyang >> kk4
-$ last | more
-$ who | wc
-$ cat /etc/passwd | head | tail -n 5
-$ ls -r | sort
-$ ls -R | grep bin
-$ cp /dev/null plan
+$ unalias h: alias를 사용하여 치환해놓은 h 문자열을 지웁니다.
+$ cat > kk: cat의 결과를 kk파일로 저장합니다.
+$ cat kk kk2 kk3 > kk4: 
+$ cat < kk > kk2 2> kk3: 
+$ echo hjyang >> kk4:
+$ last | more:
+$ who | wc:
+$ cat /etc/passwd | head | tail -n 5: passwd 파일 내용 중 앞쪽 5개만 출력합니다.
+$ ls -r | sort:
+$ ls -R | grep bin:
+$ cp /dev/null plan:
 
 10. 리눅스 운영체제의 표준입력 standard output, 표준출력 standard output, 표준오류 standard error 란 각각 무엇을 말하는가?
+답:
 
 11. 표준입력을 리디렉션 redirection 하는 예제 명령을 보이고 동작을 설명하라.
+답:
 
 12. /home 디렉토리에 있는 파일의 개수를 알려면 어떤 명령을 내려야 할까?
+답:
 
 13. /usr/bin 에 있는 파일 중 심볼릭 링크에 해당되는 파일을 찾으려면 어떤 명령을 내려야 할까?
+답:
 
 14. 윈도우즈 PC의 memo.txt 에 있는 내용을 리눅스 컴퓨터의 memo.txt 에 저장하려면 어떻게 해야 할까?
+
 
