@@ -14,6 +14,7 @@ sudo vi /etc/passwd 명령어 입력 -> 계정 암호 입력
 -> sudo passwd sonnim 명령어 입력 -> 패스워드 설정 -> sudo mkdir /home/sonnim 명령어 입력
 -> sudo chown sonnim:student sonnim /home/sonnim 명령어 입력
 
+
 <두번째 방법>
 sudo useradd -g 2000 -m -d /home/sonnim -s /bin/bash sonnim 명령어 입력 -> sudo passwd sonnim 명령어 입력 -> 패스워드 설정	
 
@@ -65,31 +66,70 @@ dlgustn4020@cegw:~$ hs
 30 31
 
 9. 다음 명령의 의미는 각각 무엇인가? 단, bash 쉘을 사용하고 있는 것으로 가정한다.
-
 $ unalias h: alias를 사용하여 치환해놓은 h 문자열을 지웁니다.
-$ cat > kk: cat의 결과를 kk파일로 저장합니다.
-$ cat kk kk2 kk3 > kk4: 
-$ cat < kk > kk2 2> kk3: 
-$ echo hjyang >> kk4:
-$ last | more:
-$ who | wc:
-$ cat /etc/passwd | head | tail -n 5: passwd 파일 내용 중 앞쪽 5개만 출력합니다.
-$ ls -r | sort:
-$ ls -R | grep bin:
-$ cp /dev/null plan:
 
+$ > kk: kk라는 빈 파일이 만들어 집니다.
+
+$ cat kk kk2 kk3 > kk4: kk, kk2, kk3 파일 안의 내용을 리다이렉션으로 kk4에 저장한 다음 cat 명령어로 출력합니다.
+
+$ cat < kk > kk2 2> kk3: kk 값을 cat으로 읽어서 kk2에 저장한 다음 cat < kk > kk2 실행시 에러가 발생할 경우 그 에러내용은 kk3에 저장합니다.
+
+$ echo hjyang >> kk4: echo 명령어로 출력할 “hjyang”이라는 텍스트를 >> 연산자로 kk4 파일에 추가합니다.
+
+$ last | more: last 명령어를 통해 최근에 접속한 계정을 순서대로 리스트를 읽어서 more 명령어로 페이지 단위로 출력합니다.
+
+$ who | wc: who 명령어로 출력되어지는 줄의 개수, 단어, 글자 수를 순서대로 출력합니다.
+dlgustn4020@cegw:~$ who | wc
+      3      15     174
+
+$ cat /etc/passwd | head | tail -n 5: passwd 파일 내용 중 앞쪽 5개만 출력합니다.
+
+$ ls -r | sort: -r로 역순으로 나타낸 디렉토리 및 파일 순서를 sort명령어로 다시 정렬하여 출력합니다.
+
+$ ls -R | grep bin: bin 디렉토리의 파일 및 디렉토리를 -R 명령어와 grep에 의해 위치와 패턴이 일치하는 항목끼리 리스트 정렬됩니다.
+
+$ cp /dev/null plan: /dev/null의 파일의 내용을 plan이라는 파일에 복사합니다.
+이때, plan이라는 파일이 없으면 현재 디렉토리에 생성한 후 복사합니다.
 10. 리눅스 운영체제의 표준입력 standard output, 표준출력 standard output, 표준오류 standard error 란 각각 무엇을 말하는가?
-답:
+답: 
+표준입력: 명령어나 프로그램에 실행에 필요한 입력값을 받는 역할입니다.
+예를들면, 디렉토리 정보를 확인 하기위해 ls 명령어를 키보드에 입력하는 것을 표준 입력이라고 합니다.
+
+표준출력: 명령어 실행시 결과가 출력되는 것을 표준출력이라고 합니다.
+예를들면, ls 명령어 실행하면 디렉토리 정보가 출력되는데 이를 표준출력이라고 합니다.
+
+표준오류: 명령어나 프로그램 실행시 발생하는 에러를 표준오류라고 합니다.
 
 11. 표준입력을 리디렉션 redirection 하는 예제 명령을 보이고 동작을 설명하라.
-답:
+답: kk 안에 있는 내용을 cat으로 읽어서 표준입력으로 들어간 다음 키보드로 타이핑 한 것 처럼 출력됩니다.
+dlgustn4020@cegw:~$ cat < kk
+안녕하세요 이현수 입니다.
 
 12. /home 디렉토리에 있는 파일의 개수를 알려면 어떤 명령을 내려야 할까?
 답:
+dlgustn4020@cegw:~$ ls /home | wc -l
+49
 
 13. /usr/bin 에 있는 파일 중 심볼릭 링크에 해당되는 파일을 찾으려면 어떤 명령을 내려야 할까?
-답:
+답: 
+dlgustn4020@cegw:~$ cd /usr/bin
+dlgustn4020@cegw:/usr/bin$ ls -al | grep ^l
+lrwxrwxrwx  1 root root          11  5월 21  2019 GET -> lwp-request
+lrwxrwxrwx  1 root root          11  5월 21  2019 HEAD -> lwp-request
+				.
+				.
+				.
+lrwxrwxrwx  1 root root           6  2월 27  2019 xzegrep -> xzgrep
+lrwxrwxrwx  1 root root           6  2월 27  2019 xzfgrep -> xzgrep
+
 
 14. 윈도우즈 PC의 memo.txt 에 있는 내용을 리눅스 컴퓨터의 memo.txt 에 저장하려면 어떻게 해야 할까?
+답:
+위도우의 memo.txt 파일을 열어서 복사한 다음 리눅스에서  > memo.txt 명령어로 파일을 만든 후 vi 명령어로 편집기를 연 다음 복사한 내용을 붙여넣기한 후 :wq로 저장합니다. 그 후 cat 명령어로 출력하면 저장이 된 것을 아래와 같이 확인 할 수 있습니다.
+<결과>
+dlgustn4020@cegw:~$ > memo.txt
+dlgustn4020@cegw:~$ vi memo.txt
+dlgustn4020@cegw:~$ cat memo.txt
+안녕하세요 이현수 메모장 입니다.
 
 
